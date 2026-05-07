@@ -12,7 +12,7 @@
 //  4. In Netlify dashboard → Environment variables, add:
 //       STRIPE_SECRET_KEY  =  sk_live_xxxx
 //       STRIPE_PRICE_ID    =  price_xxxx
-//       SITE_URL           =  https://www.omegagreensolutions.com.au
+SITE_URL           =  https://www.omegagreensolutions.com.au
 //  5. Run:  npm install stripe
 //  6. git add . && git commit -m "Add monitoring page" && git push
 // ═══════════════════════════════════════════════════════════════════
@@ -48,7 +48,7 @@ export default function MonitoringPage() {
     setLoading(true);
     setError("");
     try {
-      const res = await fetch("/.netlify/functions/create-checkout", {
+    const res = await fetch("/.netlify/functions/create-checkout", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(form),
@@ -418,11 +418,8 @@ export default function MonitoringPage() {
         {/* FOOTER */}
         <footer className="page-footer">
           © {new Date().getFullYear()} Omega Green Solutions &nbsp;·&nbsp;{" "}
-          <a href="mailto:info@omegagreensolutions.com.au">
-            info@omegagreensolutions.com.au
-          </a>
-          &nbsp;·&nbsp;
-          <Link href="/">omegagreensolutions.com.au</Link>
+        <a href="mailto:info@omegagreensolutions.com.au">
+<Link href="/">omegagreensolutions.com.au</Link>
         </footer>
 
       </div>
